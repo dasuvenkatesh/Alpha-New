@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ALPHA BRANDS</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            .navbar{
+                display: flex;
+                align-items: center;
+                padding: 20px;
+            }
+            nav{
+                flex: 1;
+                text-align: right;
+            }
+            nav ul{
+                display: inline-block;
+                list-style-type: none;
+            }
+            nav ul li{
+                display: inline-block;
+                margin-right: 20px;
+            }
+            a{
+                text-decoration: none;
+                color: #555;
+            }
+            p{
+                color: #555;
+            }
+            .container{
+                max-width: 1300px;
+                margin: auto;
+                padding-left: 25px;
+                padding-right: 25px;
+            }
+            .row{
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+            .col-2{
+                flex-basis: 50%;
+                min-width: 300px;
+            }
+            .col-2 img{
+                max-width: 100%;
+                padding: 50px 0;
+            }
+            .col-2 h1{
+                font-size: 50px;
+                line-height: 60px;
+                margin: 25px 0;
+            }
+            .btn{
+                display: inline-block;
+                background: #ff523b;
+                color: #fff;
+                padding: 8px 30px;
+                margin: 30px 0;
+                border-radius: 30px;
+                transition: 0.5s easess;
+            }
+            .btn:hover{
+                background: #563434;
+            }
+            .header{
+                background: radial-gradient(white,rgb(199, 254, 91));
+            }
+            .header .row{
+                margin-top: 30px;
+            }
+            .categories{
+              margin: 70px 0;  
+            }
+            .col-3{
+                flex-basis: 30%;  
+                min-width: 250px;
+                margin-bottom: 30px;
+            }
+            .col-3 img{
+                width: 100%;
+            }
+            .small-cont{
+                max-width: 1080px;
+                margin: auto;
+                padding-left: 25px;
+                padding-right: 25px;
+            }
+            .col-4{
+                flex-basis: 25%;
+                padding: 10px;
+                min-width: 200px;
+                margin-bottom: 50px;
+                transition: transform 0.5s;
+            }
+            .col-4 img{
+                width: 100%;
+            }
+            .title{
+                text-align: center; 
+                margin: 0 auto 80px;
+                position: relative;
+                line-height: 60px;
+                color: black;
+            }
+            .title::after{
+                content: '';
+                background: #ff523b;
+                width: 80px;
+                height: 5px;
+                border-radius: 5px;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            h4{
+                color: #555;
+                font-weight: normal;
+            }
+            .col-4 p{
+                font-size: 14px;
+
+            }
+            .col-4:hover{
+                transform: translateY(-5px);
+            }
+            .offer{
+                background: radial-gradient(white,rgb(199, 254, 91));
+                margin-top: 80px;
+                padding: 30px 0;
+            }
+
+            .review-section {
+                padding: 50px 0;
+                text-align: center;
+            }
+            .reviews {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+            }
+            .review {
+                background: radial-gradient(white,rgb(255, 148, 72));
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+                width: calc(50% - 20px);
+                max-width: 400px;
+                text-align: left;
+            }
+            .reviewer-info {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 10px;
+            }
+            .reviewer-info img {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+            .review-text {
+                font-size: 16px;
+                line-height: 1.5;
+                color: #555555;
+            }
+            .review:hover {
+                transform: translateY(-5px);
+                transition: transform 0.3s ease;
+                background-color: #ffffff;
+            }
+            .review:hover .reviewer-info img {
+                box-shadow: 0px 4px 8px rgba(85, 255, 0, 0.2);
+            }
+            .brands{
+                margin: 100px;
+            }
+            .col-5{
+                width: 160px;
+            }
+            .col-5 img{
+                width: 100%;
+                cursor: pointer;
+                filter: grayscale(100%);
+            }
+            .col-5 img:hover{
+                filter: grayscale(0);
+            }
+            .icon{
+                width: 28px;
+                margin-left: 20px;
+                display: none;
+            }
+
+            @media screen and (max-width: 800px) {
+                nav ul{
+                    position: absolute;
+                    top: 70px;
+                    left: 0;
+                    margin-top: 30px;
+                    background: radial-gradient(rgb(11, 11, 11),black);
+                    width: 100%;
+                    overflow: hidden;
+                    transition: max-height 0.5s;
+                }
+                nav ul li{
+                    display: block;
+                    margin-right: 50px;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                }
+                nav ul li a{
+                    color: #fff;
+
+                }
+                .icon{
+                    display: block;
+                    cursor: pointer;
+
+                }
+                
+            }
+            @media screen and (max-width: 600px){
+                .row{
+                    text-align: center;
+                }
+                .col-2, .col-3, .col-4{
+                    flex-basis: 100%;
+
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <div class="container">
+                <div class="navbar">
+                    <div class="logo">
+                        <img src="Logo.jpg" style="height: 100px;width: 100px;border-radius: 30px;">
+                    </div>
+                    <nav>
+                        <ul id="items">
+                            <li><a href="">HOME</a></li>
+                            <li><a href="">BRANDS</a></li>
+                            <li><a href="">ABOUT</a></li>
+                            <li><a href="">CONTACT</a></li>
+                        </ul>
+                    </nav>
+                    <img src="menu.png" class="icon" onclick="toogle()">
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                      <h1>ALPHA BRANDS <br>WELCOMES YOU</h1> 
+                      <p>hello all and welcome to alpha brands where you can find the comfort in diversity</p> 
+                      <a href="" class="btn">Explore Now &#8594;</a>
+                    </div>
+                    <div class="col-2">
+                        <img src="Logo.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!--features-->
+        <div class="categories">
+            <div class="small-cont">
+                <div class="row">
+                    <div class="col-3">
+                        <img src="category-1.jpg">
+                    </div>
+                    <div class="col-3">
+                        <img src="category-2.jpg">
+                    </div>
+                    <div class="col-3">
+                        <img src="category-3.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--products-->
+        <div class="small-cont">
+            <h2 class="title">Products</h2>
+            <div class="row">
+                <div class="col-4">
+                    <img src="category-1.jpg">
+                    <h4>Pant</h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <p>$20.00</p>
+                </div>
+                <div class="col-4">
+                    <img src="category-1.jpg">
+                    <h4>Pant</h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <p>$20.00</p>
+                </div>
+                <div class="col-4">
+                    <img src="category-1.jpg">
+                    <h4>Pant</h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <p>$20.00</p>
+                </div>
+                <div class="col-4">
+                    <img src="category-1.jpg">
+                    <h4>Pant</h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <p>$20.00</p>
+                </div>
+            </div>
+            <h2 class="title">Products</h2>
+            <div class="row">
+                <div class="col-4">
+                    <img src="category-1.jpg">
+                    <h4>Pant</h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <p>$20.00</p>
+                </div>
+                <div class="col-4">
+                    <img src="category-1.jpg">
+                    <h4>Pant</h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <p>$20.00</p>
+                </div>
+                <div class="col-4">
+                    <img src="category-1.jpg">
+                    <h4>Pant</h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <p>$20.00</p>
+                </div>
+                <div class="col-4">
+                    <img src="category-1.jpg">
+                    <h4>Pant</h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <p>$20.00</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!--OFFER-->
+        <div class="offer">
+            <div class="small-cont">
+                <div class="row">
+                    <div class="col-2">
+                        <img src="exclusive.png">
+                    </div> 
+                    <div class="col-2">
+                        <p>EXCLUSIVELY AVAILABLE ON ALPHA BRANDS</p>
+                        <h1>MI WATCH</h1>
+                    </div>
+                </div> 
+            </div>
+        </div>
+        <!--BRANDS-->
+        <div class="brands">
+            <div class="small-cont">
+                <div class="row">
+                    <div class="col-5">
+                        <img src="logo-coca-cola.png">
+                    </div> 
+                    <div class="col-5">
+                        <img src="logo-godrej.png">
+                    </div>
+                    <div class="col-5">
+                        <img src="logo-oppo.png">
+                    </div>
+                    <div class="col-5">
+                        <img src="logo-paypal.png">
+                    </div>
+                </div> 
+            </div>
+        </div>
+        <!--script-->
+        <script>
+            var items= document.getElementById("items")
+            items.style.maxHeight="0px";
+            function toogle(){
+                if(items.style.maxHeight=="0px"){
+                    items.style.maxHeight="200px";
+                }
+                else{
+                    items.style.maxHeight="0px";
+                }
+            }
+        </script>
+    </body>
+</html>
